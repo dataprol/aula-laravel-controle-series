@@ -1,15 +1,15 @@
-<x-layout title="Episodes" :mensagem-sucesso="$mensagemSucesso">
-    <form method="POST">
+<x-layout title="Episódios" :mensagem-sucesso="$mensagemSucesso">
+    <form method="post">
         @csrf
         <ul class="list-group">
             @foreach ($episodes as $episode)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Episódio {{ $episode->number }}
 
-                    Episode {{ $episode->number }}
-                    @auth
-                        <input type="checkbox" name="episodes[]" value="{{ $episode->id }}"
-                            @if ($episode->watched) @checked(true) @endif />
-                    @endauth
+                    <input type="checkbox"
+                           name="episodes[]"
+                           value="{{ $episode->id }}"
+                           @if ($episode->watched) checked @endif />
                 </li>
             @endforeach
         </ul>

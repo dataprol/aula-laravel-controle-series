@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Auth;
-use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class UsersController extends Controller
+class UsersController
 {
     public function create()
     {
-        return view("users.create");
+        return view('users.create');
     }
 
     public function store(Request $request)

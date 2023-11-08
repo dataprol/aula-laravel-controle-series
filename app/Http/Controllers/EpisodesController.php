@@ -25,6 +25,7 @@ class EpisodesController
 
         $season->push();
 
-        return to_route('episodes.index', $season->id)->with('mensagem.sucesso', 'Episódios marcados como assistidos');
+        return to_route('episodes.index', $season->id)
+            ->with('mensagem.sucesso', 'Episódios marcados como assistidos');
     }
 }
